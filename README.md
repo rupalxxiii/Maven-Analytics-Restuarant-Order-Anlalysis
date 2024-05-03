@@ -17,7 +17,7 @@ Jupyter Notebook
 MySQL database
 
 # Installation
-Clone the repository: git clone https://github.com/zainhaidar16/Restaurant-Order-Analysis.git
+Clone the repository: https://github.com/rupalxxiii/Maven-Analytics-Restuarant-Order-Anlalysis 
 Install the required dependencies.
 Set up the MySQL database using the provided SQL script:
 Run the SQL script create_restaurant_db.sql to create the database and necessary tables.
