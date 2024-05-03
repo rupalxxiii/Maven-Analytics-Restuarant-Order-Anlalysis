@@ -84,100 +84,95 @@ View the details of top 5 highest spent orders. What insights can you gather fro
 
 1 View the menu_items table.
 
-SELECT *
-FROM menu_items;
+       SELECT * FROM menu_items;
 
 -------------------------------------------------------------------------------------
 
 2 Find the number of items on the menu
 
-SELECT COUNT(*)
-FROM menu_items;
+       SELECT COUNT(*) FROM menu_items;
 
 -----------------------------------------------------------------------------------------
 
 3 What are the least and most expensive item on the menu ?
 
-SELECT *
-FROM menu_items
-ORDER BY price;
-SELECT *
-FROM menu_items
-ORDER BY price DESC;
+        SELECT *
+        FROM menu_items
+        ORDER BY price;
+
+        SELECT *
+        FROM menu_items
+        ORDER BY price DESC;
 
 -------------------------------------------------------------------------------------------
 
 3 How many italian dishes are on the menu ?
 
-SELECT COUNT(*)
-FROM menu_items
-WHERE category = 'italian';
+         SELECT COUNT(*)
+         FROM menu_items
+         WHERE category = 'italian';
 
 ----------------------------------------------------------------------------------------------
 
 4 What are the least and most expensive italian dishes on the menu ?
 
-SELECT *
-FROM menu_items
-WHERE category = 'italian'
-ORDER BY price;
-SELECT *
-FROM menu_items
-WHERE category = 'italian'
-ORDER BY price DESC;
+      SELECT *
+      FROM menu_items
+      WHERE category = 'italian'
+      ORDER BY price;
+
 
 ---------------------------------------------------------------------------
 
 5 How many dishes are in each category ?
 
-SELECT category, COUNT(*)
-FROM menu_items
-GROUP BY category;
+            SELECT category, COUNT(*)
+            FROM menu_items
+            GROUP BY category;
 
 ----------------------------------------------------------------------------------------------------
 
 5 What is the average dish price within each category ?
 
-SELECT category, AVG(price)
-FROM menu_items
-GROUP BY category;
+            SELECT category, AVG(price)
+            FROM menu_items
+            GROUP BY category;
 
 ---------------------------------------------------------------------------------------------------
 
 6 View order_details table.
 
-SELECT *
-FROM order_details;
+           SELECT * FROM order_details;
 
 -----------------------------------------------------------------------------------------------
 
 7 What is the date range of the table ?
 
-SELECT MIN(order_date), max(order_date)
-FROM order_details;
+        SELECT MIN(order_date), max(order_date)
+        FROM order_details;
 
 --------------------------------------------------------------------------------------------------
 
 8 How many orders where made within this date range ?
 
-SELECT COUNT(DISTINCT order_id)
-FROM order_details;
+            SELECT COUNT(DISTINCT order_id)
+            FROM order_details;
 
 -------------------------------------------------------------------------------------------------
 
 9 How many items where ordered within this date range ?
 
-SELECT COUNT(*)
-FROM order_details;
+             SELECT COUNT(*)
+              FROM order_details;
 
 --------------------------------------------------------------------------------------------------------
 
 10 Which orders had the most number of items ?
 
-SELECT order_id, COUNT(item_id) AS num_items
-FROM order_details
-GROUP BY order_id
-ORDER BY num_items DESC;
+           SELECT order_id, COUNT(item_id) AS num_items
+           FROM order_details
+            GROUP BY order_id
+           ORDER BY num_items DESC;
 
 ------------------------------------------------------------------------------------------------------
 
